@@ -14,7 +14,6 @@
     height: 500px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -24,11 +23,12 @@
     font-size: 5em;
     font-weight: bold;
     color: #BEB9B6;
+    text-shadow: 0 5px 5px rgba(236, 231, 231, 0.3);
 }
 .btn-box{
     height: 200px;
     display: flex;
-    flex-direction: column;
+    gap: 20px;
     justify-content: space-around;
     align-items: center;
 }
@@ -56,8 +56,10 @@
 }
 
 @media(max-width:430px) {
-    .container span{font-size:2em;}
+    .container {margin-block: 80px;}
+    .container span{font-size:3em; padding:20px;}
     body {
-        background-size: 1000px 700px;   
+        background-size: 600px 930px;   
     }
+    .btn-box {flex-direction: column; }
 }
