@@ -7,7 +7,6 @@
   body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-image: url("../assets/img/Cinema\ movie\ .jpeg");
-    /* background-size: cover; */
     background-size: 1500px 700px;   
 }
 
@@ -42,7 +41,6 @@
     cursor: pointer;
     border-radius: 2em;
     color: #BEB9B6;
-    /* border: 2px solid #BEB9B6; */
     background:#ca0905 ;
     position: relative;
     transition: 0.25s ease-out;
