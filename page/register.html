@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Account</title>
+    <link rel="stylesheet" href="../css/ree.css"> <!-- تم تعديل المسار -->
+</head>
+
+<body>
+    <div class="main-w3layouts wrapper">
+        <div class="main-agileinfo">
+            <h1>Create New Account</h1>
+            <div class="agileits-top">
+                <form onsubmit="handleSubmit(event)">
+                    <label class="text-light"> User Name</label>
+                    <input type="text" name="userName" id="userName" required />
+
+                    <label class="text-light">Email</label>
+                    <input type="email" name="email" id="email" required />
+
+                    <label class="text-light">Password</label>
+                    <input type="password" name="password" id="password" required />
+
+                    <label class="text-light">Confirm Password</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" required />
+
+                    <button type="submit" class="btn btn-light text-danger" id="submitButton">
+                        Register
+                    </button>
+                </form>
+                <p>Do You Have An Account? <a href="../page/login.html">Sign In!</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="../js/ree.js"></script>
+</body>
+
+</html>
