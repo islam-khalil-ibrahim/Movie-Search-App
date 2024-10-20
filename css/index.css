@@ -57,5 +57,7 @@
 
 @media(max-width:430px) {
     .container span{font-size:2em;}
-
+    body {
+        background-size: 1000px 700px;   
+    }
 }
