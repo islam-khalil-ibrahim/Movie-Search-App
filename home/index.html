@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFlix - Netflix Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>MyFlix</h1>
+        </div>
+
+        <div class="favorites-icon">
+            <button id="toggleFavoritesBtn">
+                <i class="fas fa-heart"></i>
+            </button>
+            <div id="favoritesDropdown" class="favorites-dropdown">
+                <div id="favoritesContainer">
+                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hsection">
+        <h2>Discover the latest movies</h2>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for movies or shows...">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
+
+    <section id="searchResultsSection" style="display: none;">
+        <h2>Search Results</h2>
+        <div class="movie-container" id="searchResultsContainer">
+
+        </div>
+        <button id="showSomeMoviesBtn" style="display: none;">Show Some Movies</button>
+    </section>
+
+
+    <section id="SomeMoviesSection">
+        <h2>Some Movies</h2>
+        <div class="movie-container" id="movieContainer">
+
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
