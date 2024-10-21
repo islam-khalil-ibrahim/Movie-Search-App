@@ -11,46 +11,61 @@ const Toast = Swal.mixin({
 });
 
 function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); // منع إعادة تحميل الصفحة
 
     const userName = document.getElementById('userName').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
     const confirmPassword = document.getElementById('confirmPassword').value.trim();
 
+    // التحقق من وجود اسم المستخدم
     if (!userName) {
         Toast.fire({
             icon: 'error',
-            title: 'Please enter a valid user name.'
+            title: 'يرجى إدخال اسم مستخدم صحيح.'
         });
         return;
     }
 
+    // التحقق من صحة البريد الإلكتروني
     if (!validateEmail(email)) {
         Toast.fire({
             icon: 'error',
-            title: 'Please enter a valid email address.'
+            title: 'يرجى إدخال عنوان بريد إلكتروني صحيح.'
         });
         return;
     }
 
+    // التحقق من طول كلمة المرور
     if (!password || password.length < 6) {
         Toast.fire({
             icon: 'error',
-            title: 'Password must be at least 6 characters long.'
+            title: 'يجب أن تتكون كلمة المرور من 6 أحرف على الأقل.'
         });
         return;
     }
 
+    // التحقق من تطابق كلمتي المرور
     if (password !== confirmPassword) {
         Toast.fire({
             icon: 'error',
-            title: 'Passwords do not match. Please try again.'
+            title: 'كلمتا المرور غير متطابقتين. يرجى المحاولة مرة أخرى.'
         });
         return;
     }
 
-    // Save data to localStorage
+    // التحقق مما إذا كان البريد الإلكتروني موجودًا
+    const existingUser = JSON.parse(localStorage.getItem('userData'));
+
+    if (existingUser && existingUser.email === email) {
+        Toast.fire({
+            icon: 'error',
+            title: 'هذا البريد الإلكتروني مسجل بالفعل. يرجى استخدام بريد إلكتروني آخر.'
+        });
+        return;
+    }
+
+    // حفظ البيانات في localStorage
     const userData = {
         userName: userName,
         email: email,
@@ -61,10 +76,10 @@ function handleSubmit(event) {
 
     Toast.fire({
         icon: 'success',
-        title: 'Account Created!',
-        text: 'Your account has been created successfully.'
+        title: 'تم إنشاء الحساب!',
+        text: 'تم إنشاء حسابك بنجاح.'
     }).then(() => {
-        window.location.href = 'login.html';
+        window.location.href = 'login.html'; // توجيه المستخدم إلى صفحة تسجيل الدخول
     });
 }
 
@@ -72,4 +87,3 @@ function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
 }
-
