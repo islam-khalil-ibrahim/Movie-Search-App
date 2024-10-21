@@ -1,0 +1,130 @@
+/* Resetting default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+}
+
+/* Wrapper for the form */
+.main-w3layouts.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#0c0c0b, #db0d0de3, #000000);
+
+}
+
+/* Main form container */
+.main-agileinfo {
+    background: rgba(62, 59, 59, 0.8);
+    padding: 2.5em;
+    width: 33%;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    /* إضافة ظل خفيف */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    width: 90%;
+    /* تعديل عرض الحقول لتناسب المحتوى */
+    padding: 10px;
+    margin: 1em 0;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus {
+    outline: none;
+    border-color: #76b852;
+}
+
+/* Submit button */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 1em;
+    background: #76b852;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    letter-spacing: 2px;
+}
+
+button[type="submit"]:hover {
+    background: #8dc26f;
+}
+
+/* Sign in link */
+p {
+    margin-top: 20px;
+    color: #fff;
+}
+
+p a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #76b852;
+}
+
+/* Background bubbles */
+.colorlib-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.colorlib-bubbles li {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 20s linear infinite;
+    bottom: -150px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-1000px);
+    }
+}
