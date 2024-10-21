@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    var dropdownToggle = document.querySelector('.dropdown-toggle');
-    var dropdownMenu = document.querySelector('.dropdown-menu');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
 
     // Toggle dropdown menu on click
     dropdownToggle.addEventListener('click', function(event) {
