@@ -91,9 +91,6 @@ header {
 .favorite-icon:hover {
     color: red;
 }
-.MyList-icon:hover{
-    color: pink;
-}
 
 .favorites-icon {
     position: relative;
@@ -111,7 +108,8 @@ header {
     max-height: 300px;
     overflow-y: auto;
     margin-top: 5px;
-    left: -350px;
+    top: 100%;
+    right: 0;
 }
 
 .favorites-dropdown .movie {
@@ -235,7 +233,6 @@ header {
     border-radius: 5px;
     z-index: 1000;
     min-width: 150px;
-   
     flex-direction: column;
 }
 
@@ -244,7 +241,6 @@ header {
     color: #333;
     text-decoration: none;
     display: none;
-    
     transition: background-color 0.2s ease-in-out;
 }
 
