@@ -235,6 +235,8 @@ header {
     border-radius: 5px;
     z-index: 1000;
     min-width: 150px;
+   
+    flex-direction: column;
 }
 
 .dropdown-item {
@@ -242,6 +244,7 @@ header {
     color: #333;
     text-decoration: none;
     display: none;
+    
     transition: background-color 0.2s ease-in-out;
 }
 
