@@ -29,9 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // --------------Add active class-on another-page move----------
 document.addEventListener("DOMContentLoaded", function () {
-  // Get current path and find target link
   var path = window.location.pathname.split("/").pop();
-  // Account for home page with empty path
   if (path === "") {
     path = "index.html";
   }
