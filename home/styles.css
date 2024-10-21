@@ -14,7 +14,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     background-color: #000;
     position: fixed;
     top: 0;
@@ -22,9 +22,6 @@ header {
     z-index: 1000;
 }
 
-.logo h1 {
-    margin: 0;
-}
 
 .hsection {
     text-align: center;
@@ -81,9 +78,10 @@ header {
 }
 
 .favorite-icon {
+    text-shadow:0 2px 3px #333;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 14px;
+    right: 14px;
     cursor: pointer;
     font-size: 20px;
     color: white;
@@ -92,6 +90,9 @@ header {
 
 .favorite-icon:hover {
     color: red;
+}
+.MyList-icon:hover{
+    color: pink;
 }
 
 .favorites-icon {
@@ -153,3 +154,94 @@ header {
     align-items: center;
     margin-bottom: 10px;
 }
+/* //////////////////// nav/////// */
+/* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
+
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.navbar-logo {
+    color: #ff4757;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 10px 20px;
+}
+
+.navbar-toggler {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;    
+}
+
+.navbar-menu {
+    position: relative;
+}
+
+.navbar-menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu ul li {
+    position: relative;
+}
+
+.navbar-menu ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+
+.navbar-menu ul li.active a {
+    color: #ff4757;
+    background-color: #fff;
+}
+
+
+/* /////////////// */
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    display: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
