@@ -46,26 +46,26 @@ document.addEventListener("DOMContentLoaded", function () {
 // //
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
 
-    // Toggle dropdown menu on click
-    dropdownToggle.addEventListener('click', function(event) {
-        event.preventDefault(); 
-        if (dropdownMenu.style.display === 'block') {
-            dropdownMenu.style.display = 'none'; 
-        } else {
-            dropdownMenu.style.display = 'block'; 
-        }
-    });
+  // Toggle dropdown menu on click
+  dropdownToggle.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (dropdownMenu.style.display === 'block') {
+      dropdownMenu.style.display = 'none';
+    } else {
+      dropdownMenu.style.display = 'block';
+    }
+  });
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.style.display = 'none';
-        }
-    });
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function (event) {
+    if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+      dropdownMenu.style.display = 'none';
+    }
+  });
 });
 
 
@@ -100,18 +100,34 @@ function displayMovies() {
     const isFavorite = favoriteMovies.some(
       (favMovie) => favMovie.imdbID === movie.imdbID
     );
-
     movieEl.innerHTML = `
-            <img src="${movie.Poster}" alt="${movie.Title}">
-            <h3>${movie.Title}</h3>
-            <i class="fas fa-heart favorite-icon" 
-               style="color: ${isFavorite ? "red" : "white"};" 
-               data-imdbid="${movie.imdbID}" 
-               onclick="toggleFavorite('${movie.imdbID}', '${movie.Title}', '${ movie.Poster}', this)">
-            </i> `;
+      <img src="${movie.Poster}" alt="${movie.Title}">
+      <h3>${movie.Title}</h3>
+      <i id="iconhid" class="fas fa-heart favorite-icon" 
+          style="color: ${isFavorite ? "red" : "white"};" 
+          data-imdbid="${movie.imdbID}" 
+          onclick="toggleFavorite('${movie.imdbID}', '${movie.Title}', '${movie.Poster}', this)" type="hidden"></i>
+      <div class="icon-container">
+          <button class="icon" onclick="handleFavoriteClick('${movie.imdbID}', '${movie.Title}', '${movie.Poster}')">
+              <i class="fas fa-heart"></i>
+          </button>
+          <button class="icon" onclick="window.location.href='movie-details.html?id=${movie.imdbID}'">
+              <i class="fas fa-eye"></i>
+          </button>
+      </div>
+    `;
+
     movieContainer.appendChild(movieEl);
   });
 }
+
+
+
+function handleFavoriteClick(imdbID, title, poster) {
+  const icon = document.querySelector(`.favorite-icon[data-imdbid='${imdbID}']`);
+  toggleFavorite(imdbID, title, poster, icon);
+}
+
 
 // دالة لتفعيل وإلغاء تفعيل المفضلة
 function toggleFavorite(imdbID, title, poster, icon) {
@@ -221,9 +237,8 @@ function displaySearchResults(movies) {
             <i class="fas fa-heart favorite-icon" 
                style="color: ${isFavorite ? "red" : "white"};" 
                data-imdbid="${movie.imdbID}" 
-               onclick="toggleFavorite('${movie.imdbID}', '${movie.Title}', '${
-      movie.Poster
-    }', this)"></i>
+               onclick="toggleFavorite('${movie.imdbID}', '${movie.Title}', '${movie.Poster
+      }', this)"></i>
         `;
     searchResultsContainer.appendChild(resultEl);
   });
