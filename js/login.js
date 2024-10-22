@@ -19,7 +19,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
             icon: "success",
             title: "Login successful!"
         }).then(() => {
-            window.location.href = 'Search.html';
+            window.location.href = 'main.html';
         });
 
     } else {

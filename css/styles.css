@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.hsection {
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-container input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.search-container button {
+    padding: 10px;
+    background-color: #ff4757;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.search-container button:hover {
+    transform: scale(1.1);
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.movie {
+    background-color: #333;
+    border-radius: 10px;
+    width: calc(20% - 10px);
+    margin: 5px;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.favorite-icon {
+    text-shadow:0 2px 3px #333;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    transition: color 0.3s;
+}
+
+.favorite-icon:hover {
+    color: red;
+}
+
+.favorites-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.favorites-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 350px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 5px;
+    top: 100%;
+    right: 0;
+}
+
+.favorites-dropdown .movie {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    align-items: center;
+    background-color: #444;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.favorites-dropdown img {
+    width: 60px;
+    height: 90px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.favorites-dropdown h3 {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 14px;
+    color: #fff;
+}
+
+.remove-favorite {
+    background-color: transparent;
+    border: none;
+    color: #ff4757;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.favorite-movie-wrapper {
+    background-color: #444;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+/* //////////////////// nav/////// */
+/* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
+
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.navbar-logo {
+    color: #ff4757;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 10px 20px;
+}
+
+.navbar-toggler {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;    
+}
+
+.navbar-menu {
+    position: relative;
+}
+
+.navbar-menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu ul li {
+    position: relative;
+}
+
+.navbar-menu ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+
+.navbar-menu ul li.active a {
+    color: #ff4757;
+    background-color: #fff;
+}
+
+
+/* /////////////// */
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 1000;
+    min-width: 150px;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    display: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
