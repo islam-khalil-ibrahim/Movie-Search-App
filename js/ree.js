@@ -22,7 +22,7 @@ function handleSubmit(event) {
     if (!userName) {
         Toast.fire({
             icon: 'error',
-            title: 'يرجى إدخال اسم مستخدم صحيح.'
+            title: 'Please enter a valid username.'
         });
         return;
     }
@@ -31,7 +31,7 @@ function handleSubmit(event) {
     if (!validateEmail(email)) {
         Toast.fire({
             icon: 'error',
-            title: 'يرجى إدخال عنوان بريد إلكتروني صحيح.'
+            title: 'Please enter a valid email address.'
         });
         return;
     }
@@ -40,7 +40,7 @@ function handleSubmit(event) {
     if (!password || password.length < 6) {
         Toast.fire({
             icon: 'error',
-            title: 'يجب أن تتكون كلمة المرور من 6 أحرف على الأقل.'
+            title: 'Password must be at least 6 characters long.'
         });
         return;
     }
@@ -48,7 +48,7 @@ function handleSubmit(event) {
     if (password !== confirmPassword) {
         Toast.fire({
             icon: 'error',
-            title: 'كلمتا المرور غير متطابقتين. يرجى المحاولة مرة أخرى.'
+            title: 'Passwords do not match. Please try again.'
         });
         return;
     }
@@ -62,7 +62,7 @@ function handleSubmit(event) {
     if (existingUser) {
         Toast.fire({
             icon: 'error',
-            title: 'هذا البريد الإلكتروني مسجل بالفعل. يرجى استخدام بريد إلكتروني آخر.'
+            title: 'This email is already registered. Please use a different email.'
         });
         return;
     }
@@ -80,8 +80,8 @@ function handleSubmit(event) {
    
     Toast.fire({
         icon: 'success',
-        title: 'تم إنشاء الحساب!',
-        text: 'تم إنشاء حسابك بنجاح.'
+        title:  'Account created!',
+        text:  'Your account has been successfully created.'
     }).then(() => {
         window.location.href = 'login.html'; 
     });
