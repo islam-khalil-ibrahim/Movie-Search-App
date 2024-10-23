@@ -1,24 +1,24 @@
-// دالة لحفظ البيانات في localStorage
+
 function saveToLocalStorage(userData, value) {
     localStorage.setItem(userData, JSON.stringify(value));
 }
 
-// دالة لاسترجاع البيانات من localStorage
+
 function getFromLocalStorage(userData) {
     const data = localStorage.getItem(userData);
     return data ? JSON.parse(data) : null;
 }
 
-// دالة للتعامل مع تسجيل المستخدم
+
 function handleSubmit(event) {
-    event.preventDefault(); // منع إعادة تحميل الصفحة
+    event.preventDefault(); 
 
     const userName = document.getElementById('userName').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
     const confirmPassword = document.getElementById('confirmPassword').value.trim();
 
-    // التحقق من وجود اسم المستخدم
+    
     if (!userName) {
         Toast.fire({
             icon: 'error',
@@ -27,7 +27,7 @@ function handleSubmit(event) {
         return;
     }
 
-    // التحقق من صحة البريد الإلكتروني
+   
     if (!validateEmail(email)) {
         Toast.fire({
             icon: 'error',
@@ -36,7 +36,7 @@ function handleSubmit(event) {
         return;
     }
 
-    // التحقق من طول كلمة المرور
+    
     if (!password || password.length < 6) {
         Toast.fire({
             icon: 'error',
@@ -45,7 +45,6 @@ function handleSubmit(event) {
         return;
     }
 
-    // التحقق من تطابق كلمتي المرور
     if (password !== confirmPassword) {
         Toast.fire({
             icon: 'error',
@@ -54,10 +53,10 @@ function handleSubmit(event) {
         return;
     }
 
-    // استرجاع بيانات المستخدمين من localStorage
+    
     let usersData = getFromLocalStorage('usersData') || [];
 
-    // التحقق مما إذا كان البريد الإلكتروني مسجلًا بالفعل
+    
     const existingUser = usersData.find(user => user.email === email);
 
     if (existingUser) {
@@ -68,7 +67,7 @@ function handleSubmit(event) {
         return;
     }
 
-    // إضافة بيانات المستخدم الجديد
+    
     const newUser = {
         userName: userName,
         email: email,
@@ -78,17 +77,17 @@ function handleSubmit(event) {
     usersData.push(newUser);
     saveToLocalStorage('usersData', usersData);
 
-    // عرض رسالة النجاح
+   
     Toast.fire({
         icon: 'success',
         title: 'تم إنشاء الحساب!',
         text: 'تم إنشاء حسابك بنجاح.'
     }).then(() => {
-        window.location.href = 'login.html'; // توجيه المستخدم إلى صفحة تسجيل الدخول
+        window.location.href = 'login.html'; 
     });
 }
 
-// دالة للتحقق من صحة البريد الإلكتروني
+
 function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);

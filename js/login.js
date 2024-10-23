@@ -1,5 +1,5 @@
 document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // منع إعادة تحميل الصفحة
+    event.preventDefault(); 
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -15,7 +15,6 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         return;
     }
 
-    // البحث عن المستخدم الذي يتطابق مع البريد الإلكتروني وكلمة المرور
     const foundUser = storedUsers.find(user => user.email === email && user.password === password);
 
     if (foundUser) {
@@ -23,7 +22,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
             icon: "success",
             title: "تم تسجيل الدخول بنجاح!"
         }).then(() => {
-            window.location.href = 'main.html'; // توجيه المستخدم إلى الصفحة الرئيسية
+            window.location.href = 'main.html'; 
         });
     } else {
         Toast.fire({
@@ -33,7 +32,6 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     }
 });
 
-// إعداد التوست (toast) باستخدام SweetAlert2
 const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
