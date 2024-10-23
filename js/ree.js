@@ -1,4 +1,3 @@
-// Toast initialization
 const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
@@ -12,14 +11,14 @@ const Toast = Swal.mixin({
 });
 
 function handleSubmit(event) {
-    event.preventDefault(); // Prevent page reload
+    event.preventDefault();
 
     const userName = document.getElementById('userName').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
     const confirmPassword = document.getElementById('confirmPassword').value.trim();
 
-    // Validate inputs
+
     if (!userName) {
         Toast.fire({
             icon: 'error',
@@ -52,10 +51,9 @@ function handleSubmit(event) {
         return;
     }
 
-    // Retrieve existing users or initialize empty array
+
     const users = JSON.parse(localStorage.getItem('userData')) || [];
 
-    // Check if email already exists
     const existingUser = users.find(user => user.email === email);
     if (existingUser) {
         Toast.fire({
@@ -65,7 +63,6 @@ function handleSubmit(event) {
         return;
     }
 
-    // Create a new user object
     const userData = {
         userName: userName,
         email: email,
