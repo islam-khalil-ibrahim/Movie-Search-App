@@ -1,3 +1,4 @@
+// Toast initialization
 const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
@@ -11,75 +12,75 @@ const Toast = Swal.mixin({
 });
 
 function handleSubmit(event) {
-    event.preventDefault(); // منع إعادة تحميل الصفحة
+    event.preventDefault(); // Prevent page reload
 
     const userName = document.getElementById('userName').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
     const confirmPassword = document.getElementById('confirmPassword').value.trim();
 
-    // التحقق من وجود اسم المستخدم
+    // Validate inputs
     if (!userName) {
         Toast.fire({
             icon: 'error',
-            title: 'يرجى إدخال اسم مستخدم صحيح.'
+            title: 'Please enter a valid username.'
         });
         return;
     }
 
-    // التحقق من صحة البريد الإلكتروني
     if (!validateEmail(email)) {
         Toast.fire({
             icon: 'error',
-            title: 'يرجى إدخال عنوان بريد إلكتروني صحيح.'
+            title: 'Please enter a valid email address.'
         });
         return;
     }
 
-    // التحقق من طول كلمة المرور
     if (!password || password.length < 6) {
         Toast.fire({
             icon: 'error',
-            title: 'يجب أن تتكون كلمة المرور من 6 أحرف على الأقل.'
+            title: 'Password must be at least 6 characters long.'
         });
         return;
     }
 
-    // التحقق من تطابق كلمتي المرور
     if (password !== confirmPassword) {
         Toast.fire({
             icon: 'error',
-            title: 'كلمتا المرور غير متطابقتين. يرجى المحاولة مرة أخرى.'
+            title: 'Passwords do not match. Please try again.'
         });
         return;
     }
 
-    // التحقق مما إذا كان البريد الإلكتروني موجودًا
-    const existingUser = JSON.parse(localStorage.getItem('userData'));
+    // Retrieve existing users or initialize empty array
+    const users = JSON.parse(localStorage.getItem('userData')) || [];
 
-    if (existingUser && existingUser.email === email) {
+    // Check if email already exists
+    const existingUser = users.find(user => user.email === email);
+    if (existingUser) {
         Toast.fire({
             icon: 'error',
-            title: 'هذا البريد الإلكتروني مسجل بالفعل. يرجى استخدام بريد إلكتروني آخر.'
+            title: 'This email is already registered. Please use a different email.'
         });
         return;
     }
 
-    // حفظ البيانات في localStorage
+    // Create a new user object
     const userData = {
         userName: userName,
         email: email,
         password: password,
     };
 
-    localStorage.setItem('userData', JSON.stringify(userData));
+    users.push(userData); // Add the new user to the array
+    localStorage.setItem('userData', JSON.stringify(users)); // Store the updated array in localStorage
 
     Toast.fire({
         icon: 'success',
-        title: 'تم إنشاء الحساب!',
-        text: 'تم إنشاء حسابك بنجاح.'
+        title: 'Account created!',
+        text: 'Your account has been created successfully.'
     }).then(() => {
-        window.location.href = 'login.html'; // توجيه المستخدم إلى صفحة تسجيل الدخول
+        window.location.href = '../page/login.html'; // Redirect to login page
     });
 }
 
