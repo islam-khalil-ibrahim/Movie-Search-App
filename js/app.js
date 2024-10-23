@@ -220,7 +220,7 @@ searchBtn.addEventListener("click", async() => {
 
 function displaySearchResults(movies) {
     const searchResultsContainer = document.getElementById("searchResultsContainer");
-    searchResultsContainer.innerHTML = "";
+    searchResultsContainer.innerHTML = ""; // تغريغ 
 
     movies.forEach((movie) => {
         const resultEl = document.createElement("div");
