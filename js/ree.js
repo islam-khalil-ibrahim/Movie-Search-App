@@ -1,15 +1,15 @@
-const Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-    }
-});
+// دالة لحفظ البيانات في localStorage
+function saveToLocalStorage(userData, value) {
+    localStorage.setItem(userData, JSON.stringify(value));
+}
 
+// دالة لاسترجاع البيانات من localStorage
+function getFromLocalStorage(userData) {
+    const data = localStorage.getItem(userData);
+    return data ? JSON.parse(data) : null;
+}
+
+// دالة للتعامل مع تسجيل المستخدم
 function handleSubmit(event) {
     event.preventDefault(); // منع إعادة تحميل الصفحة
 
@@ -54,10 +54,13 @@ function handleSubmit(event) {
         return;
     }
 
-    // التحقق مما إذا كان البريد الإلكتروني موجودًا
-    const existingUser = JSON.parse(localStorage.getItem('userData'));
+    // استرجاع بيانات المستخدمين من localStorage
+    let usersData = getFromLocalStorage('usersData') || [];
 
-    if (existingUser && existingUser.email === email) {
+    // التحقق مما إذا كان البريد الإلكتروني مسجلًا بالفعل
+    const existingUser = usersData.find(user => user.email === email);
+
+    if (existingUser) {
         Toast.fire({
             icon: 'error',
             title: 'هذا البريد الإلكتروني مسجل بالفعل. يرجى استخدام بريد إلكتروني آخر.'
@@ -65,15 +68,17 @@ function handleSubmit(event) {
         return;
     }
 
-    // حفظ البيانات في localStorage
-    const userData = {
+    // إضافة بيانات المستخدم الجديد
+    const newUser = {
         userName: userName,
         email: email,
         password: password,
     };
 
-    localStorage.setItem('userData', JSON.stringify(userData));
+    usersData.push(newUser);
+    saveToLocalStorage('usersData', usersData);
 
+    // عرض رسالة النجاح
     Toast.fire({
         icon: 'success',
         title: 'تم إنشاء الحساب!',
@@ -83,6 +88,7 @@ function handleSubmit(event) {
     });
 }
 
+// دالة للتحقق من صحة البريد الإلكتروني
 function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
