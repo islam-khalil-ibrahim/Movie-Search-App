@@ -10,7 +10,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     if (!storedUsers || storedUsers.length === 0) {
         Toast.fire({
             icon: "warning",
-            title: "لم يتم العثور على مستخدمين. يرجى التسجيل أولاً."
+            title: "No users found. Please sign up first"
         });
         return;
     }
@@ -20,14 +20,14 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     if (foundUser) {
         Toast.fire({
             icon: "success",
-            title: "تم تسجيل الدخول بنجاح!"
+            title: "Login successful!"
         }).then(() => {
             window.location.href = 'main.html'; 
         });
     } else {
         Toast.fire({
             icon: "error",
-            title: "البريد الإلكتروني أو كلمة المرور غير صحيحة."
+            title: "Invalid email or password"
         });
     }
 });
