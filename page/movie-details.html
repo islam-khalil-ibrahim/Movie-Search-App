@@ -1,14 +1,36 @@
-<!-- movie-details.html -->
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل الفيلم</title>
-    <!-- <link rel="stylesheet" href="styles.css">  -->
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="../css/details.css">
 </head>
+
 <body>
-    <div id="detailsContainer"></div>
-    <script src="../js/details.js"></script> 
+    <header>
+        <nav class="navbar">
+            <a class="navbar-logo" href="#">Movie details </a>
+            <a class="navbar-link" href="./main.html">Home</a>
+        </nav>
+    </header>
+
+    <div class="details-container">
+        <div class="movie-details">
+            <img id="moviePoster" alt="Movie Poster">
+            <div class="movie-info">
+                <h2 id="movieTitle"></h2>
+                <p id="moviePlot"></p>
+                <p><strong>Released:</strong> <span id="movieReleased"></span></p>
+                <p><strong>Genre:</strong> <span id="movieGenre"></span></p>
+                <p><strong>Director:</strong> <span id="movieDirector"></span></p>
+                <p><strong>Rating:</strong> <span id="movieRating"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/details.js"></script>
 </body>
+
 </html>
