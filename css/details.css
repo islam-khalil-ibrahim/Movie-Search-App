@@ -62,7 +62,7 @@ body {
 }
 
 .movie-details:hover img {
-    transform: scale(2.05);
+    transform: scale(1.10);
 }
 
 
