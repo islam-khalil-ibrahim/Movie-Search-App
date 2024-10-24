@@ -33,6 +33,9 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const foundUser = users.find(user => user.email === email && user.password === password);
 
     if (foundUser) {
+
+        localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+
         Toast.fire({
             icon: "success",
             title: "Login successful!"

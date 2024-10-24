@@ -76,7 +76,7 @@ body {
     color: #ff6b6b;
 }
 
-.movie-info p {
+.movie-info span {
     margin: 8px 0;
     font-size: 14px;
     color: #e0e0e0;
