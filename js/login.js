@@ -1,16 +1,18 @@
 const Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-    }
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  },
 });
 
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", function (event) {
     event.preventDefault();
 
     const email = document.getElementById("email").value.trim();
@@ -21,31 +23,32 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     // Check if users is an array and not null
     if (!Array.isArray(users)) {
-        console.error("Users data is not an array:", users); // Log the retrieved value
-        Toast.fire({
-            icon: "warning",
-            title: "No users found. Please sign up first."
-        });
-        return;
+      console.error("Users data is not an array:", users); // Log the retrieved value
+      Toast.fire({
+        icon: "warning",
+        title: "No users found. Please sign up first.",
+      });
+      return;
     }
 
     // Find the user based on email and password
-    const foundUser = users.find(user => user.email === email && user.password === password);
+    const foundUser = users.find(
+      (user) => user.email === email && user.password === password
+    );
 
     if (foundUser) {
+      localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
 
-        localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
-
-        Toast.fire({
-            icon: "success",
-            title: "Login successful!"
-        }).then(() => {
-            window.location.href = 'main.html'; // Redirect to main page
-        });
+      Toast.fire({
+        icon: "success",
+        title: "Login successful!",
+      }).then(() => {
+        window.location.href = "main.html"; // Redirect to main page
+      });
     } else {
-        Toast.fire({
-            icon: "error",
-            title: "Invalid email or password."
-        });
+      Toast.fire({
+        icon: "error",
+        title: "Invalid email or password.",
+      });
     }
-});
+  });
