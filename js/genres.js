@@ -46,10 +46,10 @@ genreButtons.forEach(button => {
         const movies = await fetchMoviesByGenre(genre);
         displayMovies(movies, genre);
 
-        // إزالة الصنف active من جميع الأزرار
+
         genreButtons.forEach(btn => btn.classList.remove('active'));
 
-        // إضافة الصنف active للزر المحدد
+
         button.classList.add('active');
     });
 });
