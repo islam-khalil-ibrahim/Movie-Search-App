@@ -4,7 +4,9 @@
 The **Movie Search App** is a dynamic and interactive web application built using **HTML**, **CSS**, and **JavaScript**. It allows users to search for movies and view essential details about them, providing a smooth and user-friendly interface. This project serves as the **final project** for the **Front-End Development Course** with **Gaza Sky Geeks (GSG)**.
 
 ## Features
-- **Search Functionality**: Users can search for movies by title, receiving a list of results that match their query.
+ **User Authentication**: Users can create an account, log in, and have their information securely stored for easy future access.
+- **Favorites List**: Users can add movies to their "Favorites" list for easy access to preferred titles.
+- **Movie Search by Category**: Users can explore movies by different categories, allowing for a more refined search experience.
 - **Detailed Movie Information**: Each movie result displays essential details such as the title, release date, and additional information when available.
 - **Responsive Design**: The application is designed to be responsive, ensuring a seamless user experience on both desktop and mobile devices.
 
