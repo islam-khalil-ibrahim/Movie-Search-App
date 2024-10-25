@@ -3,7 +3,7 @@
                         padding: 0;
                         box-sizing: border-box;
                     }
-                    
+
                     body {
                         font-family: 'Poppins', sans-serif;
                         display: flex;
@@ -12,7 +12,7 @@
                         height: 100vh;
                         background: linear-gradient(#0c0c0b, #db0d0de3, #000000);
                     }
-                    
+
                     .container {
                         display: flex;
                         justify-content: center;
@@ -21,7 +21,7 @@
                         height: 100%;
                         color: #ddd;
                     }
-                    
+
                     .form-box {
                         background: rgba(62, 59, 59, 0.8);
                         padding: 40px;
@@ -31,7 +31,7 @@
                         max-width: 400px;
                         color: #fff;
                     }
-                    
+
                     .header-text {
                         font-size: 30px;
                         font-weight: 600;
@@ -39,7 +39,7 @@
                         margin-bottom: 40px;
                         color: #fff;
                     }
-                    
+
                     form input {
                         width: 100%;
                         padding: 15px;
@@ -48,12 +48,12 @@
                         border-radius: 5px;
                         font-size: 16px;
                     }
-                    
+
                     form input:focus {
                         outline: none;
                         border-color: #fff;
                     }
-                    
+
                     form button {
                         width: 100%;
                         padding: 15px;
@@ -65,22 +65,22 @@
                         cursor: pointer;
                         transition: background-color 0.3s;
                     }
-                    
+
                     form button:hover {
                         background-color: rgb(141, 4, 4)
                     }
-                    
+
                     .footer-text {
                         text-align: center;
                         margin-top: 20px;
                     }
-                    
+
                     .footer-text a {
                         color: #fff;
                         text-decoration: none;
                         font-weight: 500;
                     }
-                    
+
                     .footer-text a:hover {
                         text-decoration: underline;
                     }

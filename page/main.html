@@ -2,40 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyFlix - Netflix Clone</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMz1F7D+lgGJZfGTIiZ8R38L+XZTtc5i1cnLZJ" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMz1F7D+lgGJZfGTIiZ8R38L+XZTtc5i1cnLZJ" crossorigin="anonymous" />
 </head>
 
 <body>
     <header>
-
         <nav class="navbar">
-            <a class="navbar-logo" href="./index.html">Movies Search APP</a>
+            <a class="navbar-logo" href="main.html">Movies Search APP</a>
             <div class="navbar-toggler">
                 <i class="fas fa-bars"></i>
             </div>
             <div class="navbar-menu">
                 <ul>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME</a>
+                        <a class="nav-link" href="./main.html">HOME</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./genres.html">Moveis</a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">My List</a>
-                    </li>
                     <li class="nav-item favorites-icon">
-                        <a class="nav-link " id="toggleFavoritesBtn" href="#">
+                        <a class="nav-link" id="toggleFavoritesBtn" href="#">
                             <i class="fas fa-heart"></i> Favorites
-                            <ul style="display: none;" id="favoritesDropdown" class="favorites-dropdown">
-                                <li id="favoritesContainer"> </li>
+                            <ul style="display: none" id="favoritesDropdown" class="favorites-dropdown">
+                                <li id="favoritesContainer"></li>
                             </ul>
                         </a>
                     </li>
@@ -43,38 +38,37 @@
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown">
                             <i class="fas fa-user mx-1"></i> Profile
                         </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: none;">
-                            <li><a class="dropdown-item" href="../page/userAccount.html">My account</a></li>
-                            <li><a class="dropdown-item" href="../index.html">Log out</a></li>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: none">
+                            <li>
+                                <a class="dropdown-item" href="../page/userAccount.html">My account</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../index.html">Log out</a>
+                            </li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </nav>
-
-
-
     </header>
 
     <div class="hsection">
         <h2>Discover the latest movies</h2>
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search for movies or shows...">
+            <input type="text" id="searchInput" placeholder="Search for movies or shows..." />
             <button id="searchBtn"><i class="fas fa-search"></i></button>
         </div>
     </div>
 
-
-    <section id="searchResultsSection" style="display: none;">
+    <section id="searchResultsSection" style="display: none">
         <h2>Search Results</h2>
-        <div class="movie-container" id="searchResultsContainer">
-
-        </div>
-        <button id="showSomeMoviesBtn" style="display: none;">Show Some Movies</button>
+        <div class="movie-container" id="searchResultsContainer"></div>
+        <button id="showSomeMoviesBtn" style="display: none">
+        Show Some Movies
+      </button>
     </section>
-
 
     <section id="SomeMoviesSection">
         <div class="movie-container" id="movieContainer"></div>
