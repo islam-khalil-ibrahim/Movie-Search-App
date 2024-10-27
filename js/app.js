@@ -103,15 +103,18 @@ function displayMovies() {
       <i id="iconhid" class="fas fa-heart favorite-icon" 
           style="color: ${isFavorite ? "red" : "white"};" 
           data-imdbid="${movie.imdbID}" 
-          onclick="toggleFavorite('${movie.imdbID}', '${movie.Title}', '${movie.Poster
-      }', this)" type="hidden"></i>
+          onclick="toggleFavorite('${movie.imdbID}', '${movie.Title}', '${
+      movie.Poster
+    }', this)" type="hidden"></i>
       <div class="icon-container">
-          <button class="icon" onclick="handleFavoriteClick('${movie.imdbID
-      }', '${movie.Title}', '${movie.Poster}')">
+          <button class="icon" onclick="handleFavoriteClick('${
+            movie.imdbID
+          }', '${movie.Title}', '${movie.Poster}')">
               <i class="fas fa-heart"></i>
           </button>
-          <button class="icon" onclick="window.location.href='movie-details.html?id=${movie.imdbID
-      }'">
+          <button class="icon" onclick="window.location.href='movie-details.html?id=${
+            movie.imdbID
+          }'">
               <i class="fas fa-eye"></i>
           </button>
       </div>
@@ -128,7 +131,6 @@ function handleFavoriteClick(imdbID, title, poster) {
   toggleFavorite(imdbID, title, poster, icon);
 }
 
-
 function toggleFavorite(imdbID, title, poster, icon) {
   const movieIndex = favoriteMovies.findIndex(
     (movie) => movie.imdbID === imdbID
@@ -138,34 +140,30 @@ function toggleFavorite(imdbID, title, poster, icon) {
     favoriteMovies.splice(movieIndex, 1);
     icon.style.color = "white";
 
-    // عرض Toast باستخدام SweetAlert لإزالة الفيلم
     Swal.fire({
       toast: true,
-      position: 'top-end',
-      icon: 'info',
+      position: "top-end",
+      icon: "info",
       title: `تمت إزالة "${title}" من المفضلة.`,
       showConfirmButton: false,
-      timer: 2000
+      timer: 2000,
     });
   } else {
     // إضافة الفيلم إلى المفضلة
     favoriteMovies.push({ imdbID, Title: title, Poster: poster });
     icon.style.color = "red";
 
-    // عرض رسالة تنبيه باستخدام SweetAlert للإضافة
     Swal.fire({
-      icon: 'success',
-      title: 'تمت الإضافة بنجاح!',
+      icon: "success",
+      title: "تمت الإضافة بنجاح!",
       text: `تمت إضافة "${title}" إلى المفضلة.`,
       timer: 2000,
-      showConfirmButton: false
+      showConfirmButton: false,
     });
   }
   localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
   displayFavorites();
 }
-
-
 
 function displayFavorites() {
   favoritesContainer.innerHTML = "";
@@ -187,22 +185,19 @@ function displayFavorites() {
   }
 }
 
-// دالة لإزالة الفيلم من قائمة المفضلات
+// دالة
 function removeFavorite(imdbID) {
-  // إزالة الفيلم من قائمة المفضلات
   favoriteMovies = favoriteMovies.filter((movie) => movie.imdbID !== imdbID);
 
-  // تحديث المفضلات في localStorage
   localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
 
-  // تحديث قائمة المفضلات المعروضة
   displayFavorites();
 
   // تحديث أيقونة المفضلة في قائمة الأفلام
   const movieIcons = document.querySelectorAll(".favorite-icon");
   movieIcons.forEach((icon) => {
     if (icon.getAttribute("data-imdbid") === imdbID) {
-      icon.style.color = "white"; // إعادة تعيين لون الأيقونة
+      icon.style.color = "white";
     }
   });
 }
@@ -211,10 +206,9 @@ function removeFavorite(imdbID) {
 toggleFavoritesBtn.addEventListener("click", () => {
   const isDisplayed = favoritesDropdown.style.display === "block";
   favoritesDropdown.style.display = isDisplayed ? "none" : "block";
-  displayFavorites(); // تأكد من عرض الأفلام المفضلة
+  displayFavorites();
 });
 
-// حدث البحث
 searchBtn.addEventListener("click", async () => {
   const searchQuery = searchInput.value;
   if (searchQuery) {
@@ -271,32 +265,28 @@ showAllMoviesBtn.addEventListener("click", () => {
   document.getElementById("SomeMoviesSection").style.display = "block";
 });
 
-// تحميل الأفلام عند فتح الصفحة
 fetchMovies().then((movies) => {
   allMovies = movies;
   displayMovies();
   showAllMoviesBtn.style.display = "none"; // إخفاء الزر عند البداية
 });
 
+// Add a scroll to top button
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-// Add a scroll to top button 
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-
-window.addEventListener('scroll', ()=> {
-    if (window.scrollY > window.innerHeight / 2) {
-        scrollToTopBtn.style.display = 'block'; 
-    } else {
-        scrollToTopBtn.style.display = 'none';  
-    }
+window.addEventListener("scroll", () => {
+  if (window.scrollY > window.innerHeight / 2) {
+    scrollToTopBtn.style.display = "block";
+  } else {
+    scrollToTopBtn.style.display = "none";
+  }
 });
 
-scrollToTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' 
-    });
+scrollToTopBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });
 
-
-// عرض المفضلات عند تحميل الصفحة
 displayFavorites();
