@@ -103,18 +103,15 @@ function displayMovies() {
       <i id="iconhid" class="fas fa-heart favorite-icon" 
           style="color: ${isFavorite ? "red" : "white"};" 
           data-imdbid="${movie.imdbID}" 
-          onclick="toggleFavorite('${movie.imdbID}', '${movie.Title}', '${
-      movie.Poster
-    }', this)" type="hidden"></i>
+          onclick="toggleFavorite('${movie.imdbID}', '${movie.Title}', '${movie.Poster
+      }', this)" type="hidden"></i>
       <div class="icon-container">
-          <button class="icon" onclick="handleFavoriteClick('${
-            movie.imdbID
-          }', '${movie.Title}', '${movie.Poster}')">
+          <button class="icon" onclick="handleFavoriteClick('${movie.imdbID
+      }', '${movie.Title}', '${movie.Poster}')">
               <i class="fas fa-heart"></i>
           </button>
-          <button class="icon" onclick="window.location.href='movie-details.html?id=${
-            movie.imdbID
-          }'">
+          <button class="icon" onclick="window.location.href='movie-details.html?id=${movie.imdbID
+      }'">
               <i class="fas fa-eye"></i>
           </button>
       </div>
@@ -137,16 +134,37 @@ function toggleFavorite(imdbID, title, poster, icon) {
     (movie) => movie.imdbID === imdbID
   );
   if (movieIndex > -1) {
+    // إزالة الفيلم من المفضلة
     favoriteMovies.splice(movieIndex, 1);
-    icon.style.color = "white"; 
+    icon.style.color = "white";
+
+    // عرض Toast باستخدام SweetAlert لإزالة الفيلم
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      icon: 'info',
+      title: `تمت إزالة "${title}" من المفضلة.`,
+      showConfirmButton: false,
+      timer: 2000
+    });
   } else {
-   
+    // إضافة الفيلم إلى المفضلة
     favoriteMovies.push({ imdbID, Title: title, Poster: poster });
-    icon.style.color = "red"; 
+    icon.style.color = "red";
+
+    // عرض رسالة تنبيه باستخدام SweetAlert للإضافة
+    Swal.fire({
+      icon: 'success',
+      title: 'تمت الإضافة بنجاح!',
+      text: `تمت إضافة "${title}" إلى المفضلة.`,
+      timer: 2000,
+      showConfirmButton: false
+    });
   }
-  localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies)); 
+  localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
   displayFavorites();
 }
+
 
 
 function displayFavorites() {

@@ -1,102 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Account</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMz1F7D+lgGJZfGTIiZ8R38L+XZTtc5i1cnLZJ"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/details.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <script src="../js/login.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Account</title>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <a class="navbar-logo" href="./main.html">Movies Search APP</a>
-        <div class="navbar-toggler">
-          <i class="fas fa-bars"></i>
-        </div>
-        <div class="navbar-menu">
-          <ul>
-            <li class="nav-item active">
-              <a class="nav-link" href="main.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Moveis</a>
-            </li>
-            <li class="nav-item favorites-icon">
-              <a class="nav-link" id="toggleFavoritesBtn" href="#">
-                <i class="fas fa-heart"></i> Favorites
-                <ul
-                  style="display: none"
-                  id="favoritesDropdown"
-                  class="favorites-dropdown"
-                >
-                  <li id="favoritesContainer"></li>
-                </ul>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-white"
-                href="#"
-                id="navbarDropdown"
-              >
-                <i class="fas fa-user mx-1"></i> Profile
-              </a>
-              <!-- Dropdown menu -->
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdown"
-                style="display: none"
-              >
-                <li>
-                  <a class="dropdown-item" href="../page/userAccount.html"
-                    >My account</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../index.html">Log out</a>
-                </li>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMz1F7D+lgGJZfGTIiZ8R38L+XZTtc5i1cnLZJ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/details.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="../js/login.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a class="navbar-logo" href="./main.html">Movies Search APP</a>
+      <div class="navbar-toggler">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="navbar-menu">
+        <ul>
+          <li class="nav-item active">
+            <a class="nav-link" href="main.html">HOME</a>
+          </li>
+          <li class="nav-item favorites-icon">
+            <a class="nav-link" id="toggleFavoritesBtn" href="#">
+              <i class="fas fa-heart"></i> Favorites
+              <ul style="display: none" id="favoritesDropdown" class="favorites-dropdown">
+                <li id="favoritesContainer"></li>
               </ul>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown">
+              <i class="fas fa-user mx-1"></i> Profile
+            </a>
+            <!-- Dropdown menu -->
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: none">
+              <li>
+                <a class="dropdown-item" href="../page/userAccount.html">My account</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../index.html">Log out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <div class="details-container">
-      <div class="movie-details">
-        <div class="movie-info">
-          <img
-            src="../assets/img/user.svg"
-            alt="user"
-            style="background-color: aliceblue"
-          />
-          <h2><strong>User Name:</strong> <span id="userName"></span></h2>
-          <h2><strong>User Email :</strong> <span id="userEmail"></span></h2>
-          <h2>
-            <strong>Your Password:</strong> <span id="userPassword"></span>
-          </h2>
-        </div>
+  <div class="details-container">
+    <div class="movie-details">
+      <div class="movie-info">
+        <img src="../assets/img/user.svg" alt="user" style="background-color: aliceblue" />
+        <h2><strong>User Name:</strong> <span id="userName"></span></h2>
+        <h2><strong>User Email :</strong> <span id="userEmail"></span></h2>
+        <h2>
+        </h2>
       </div>
     </div>
-    <script src="../js/app.js"></script>
-    <script src="../js/user.js"></script>
-  </body>
+  </div>
+  <script src="../js/app.js"></script>
+  <script src="../js/user.js"></script>
+</body>
+
 </html>
