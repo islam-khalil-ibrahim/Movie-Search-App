@@ -116,16 +116,12 @@ header {
     cursor: pointer;
     font-size: 20px;
     color: white;
-    /* اللون الافتراضي */
     transition: color 0.3s, transform 0.3s;
-    /* تأثير انتقال سلس */
 }
 
 .favorite-icon:hover {
     color: red;
-    /* تغيير اللون عند التمرير */
     transform: scale(1.2);
-    /* تكبير الأيقونة عند التمرير */
 }
 
 .favorites-dropdown {

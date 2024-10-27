@@ -1,5 +1,8 @@
-/* تنسيق شريط التنقل */
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 header {
     background-color: #181818;
     padding: 1rem 2rem;
