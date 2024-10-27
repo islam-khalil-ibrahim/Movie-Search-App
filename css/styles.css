@@ -274,7 +274,7 @@ header {
     transition: background-color 0.2s ease-in-out;
 }
 
-/*  */
+
 /* Scroll to top button */
 .scroll-to-top {
     position: fixed;
@@ -288,7 +288,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
-    z-index: 1000; /* Ensure it stays on top of other elements */
+    z-index: 1000;
     transition: opacity 0.3s ease;
     &:hover{
             background-color: #ce4f4f;
