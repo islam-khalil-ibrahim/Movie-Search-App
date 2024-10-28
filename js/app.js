@@ -210,24 +210,30 @@ toggleFavoritesBtn.addEventListener("click", () => {
 });
 
 searchBtn.addEventListener("click", async () => {
-  const searchQuery = searchInput.value;
+  const searchQuery = searchInput.value.toLowerCase().trim();
   if (searchQuery) {
-    const response = await fetch(
-      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${encodeURIComponent(
-        searchQuery
-      )}`
-    );
+    const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${encodeURIComponent(searchQuery)}`);
+    
     const data = await response.json();
+
     if (data.Response === "True") {
-      displaySearchResults(data.Search);
+
+      const filteredResults = data.Search.filter(movie => movie.Title.toLowerCase().includes(searchQuery));
+
+      displaySearchResults(filteredResults);
       // إخفاء قسم جميع الأفلام وإظهار قسم نتائج البحث
       document.getElementById("SomeMoviesSection").style.display = "none";
       document.getElementById("searchResultsSection").style.display = "block";
     } else {
-      alert("No results found.");
+      Swal.fire({
+        toast: true,
+        position: "top",
+        icon: "info",
+        title: `"No results found."`,
+        showConfirmButton: false,
+        timer: 2000,
+      })
     }
-  } else {
-    alert("Please enter a search term");
   }
 });
 

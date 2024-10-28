@@ -1,77 +1,13 @@
-/* تنسيق شريط التنقل */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 header {
     background-color: #181818;
-    padding: 1rem 2rem;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #e50914;
-    text-decoration: none;
-}
-
-.navbar-toggler {
-    display: none;
-}
-
-.navbar-menu ul {
-    display: flex;
-    list-style-type: none;
-}
-
-.nav-item {
-    position: relative;
-}
-
-.nav-item a {
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-item.active a {
-    color: #e50914;
-}
-
-.nav-item a:hover {
-    color: #e50914;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    margin-top: 0.5rem;
-    list-style: none;
-    padding: 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-menu .dropdown-item {
-    padding: 0.5rem 1rem;
-    color: #ffffff;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.dropdown-menu .dropdown-item:hover {
-    background-color: #444;
-}
-
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-}
 
 .genres-section {
     text-align: center;
@@ -84,6 +20,8 @@ header {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #e50914;
+    text-shadow: 0 4px 15px rgba(241, 235, 235, 0.6);
+
 }
 
 .genres-container {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,12 +20,18 @@
       integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMz1F7D+lgGJZfGTIiZ8R38L+XZTtc5i1cnLZJ"
       crossorigin="anonymous"
     />
+    <style>
+      @import url(../css/navbar.css); 
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+      </style>
   </head>
+ 
+
 
   <body>
     <header>
       <nav class="navbar">
-        <a class="navbar-logo" href="main.html">Movies Search APP</a>
+        <a class="navbar-logo playwrite-gb-s" href="main.html">Movies Search APP</a>
         <div class="navbar-toggler">
           <i class="fas fa-bars"></i>
         </div>
@@ -78,7 +85,6 @@
     </header>
 
     <div class="hsection">
-      <h2>Discover the latest movies</h2>
       <div class="search-container">
         <input
           type="text"
@@ -90,7 +96,6 @@
     </div>
 
     <section id="searchResultsSection" style="display: none">
-      <h2>Search Results</h2>
       <div class="movie-container" id="searchResultsContainer"></div>
       <button id="showSomeMoviesBtn" style="display: none">
         Show Some Movies

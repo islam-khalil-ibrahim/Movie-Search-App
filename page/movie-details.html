@@ -21,12 +21,17 @@
     />
     <link rel="stylesheet" href="../css/details.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-  </head>
+  <style>
+  @import url(../css/navbar.css); 
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+
+  </style>
+   </head>
 
   <body>
     <header>
       <nav class="navbar">
-        <a class="navbar-logo" href="./main.html">Movies Search APP</a>
+        <a class="navbar-logo playwrite-gb-s" href="./main.html">Movies Search APP</a>
         <div class="navbar-toggler">
           <i class="fas fa-bars"></i>
         </div>
@@ -36,7 +41,7 @@
               <a class="nav-link" href="main.html">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Moveis</a>
+              <a class="nav-link" href="./genres.html">Moveis</a>
             </li>
             <li class="nav-item favorites-icon">
               <a class="nav-link" id="toggleFavoritesBtn" href="#">
@@ -80,15 +85,16 @@
     </header>
 
     <div class="details-container">
-      <div class="movie-details">
+      <div class="movie-details" >
         <img id="moviePoster" alt="Movie Poster" />
         <div class="movie-info">
           <h2 id="movieTitle"></h2>
           <p id="moviePlot"></p>
-          <p><strong>Released:</strong> <span id="movieReleased"></span></p>
-          <p><strong>Genre:</strong> <span id="movieGenre"></span></p>
-          <p><strong>Director:</strong> <span id="movieDirector"></span></p>
-          <p><strong>Rating:</strong> <span id="movieRating"></span></p>
+          <p><strong>Released :</strong> <span id="movieReleased"></span></p>
+          <p><strong>Genre :</strong> <span id="movieGenre"></span></p>
+          <p><strong>Director :</strong> <span id="movieDirector"></span></p>
+          <p><strong>Rating ⭐:</strong> <span id="movieRating"></span></p>
+    
         </div>
       </div>
     </div>
