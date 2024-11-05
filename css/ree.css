@@ -117,3 +117,22 @@ input::placeholder {
     opacity: 1;
     /* التأكد من أن اللون يظهر بشكل كامل */
 }
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .main-agileinfo {
+        width: 90%;
+        padding: 1.5em; 
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="file"] {
+        width: 100%; 
+    }
+}

@@ -93,3 +93,34 @@ header {
     font-size: 1rem;
     color: #ffffff;
 }
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .genre-btn {
+        font-size: 0.9rem; 
+        padding: 0.4rem 0.8rem;
+    }
+
+    .movie {
+        width: 120px;
+    }
+
+    #genreMoviesSection h2 {
+        font-size: 1.5rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .genres-section h2 {
+        font-size: 1.5rem; 
+    }
+
+    .movie {
+        width: 100px; 
+    }
+
+    .genre-btn {
+        padding: 0.3rem 0.6rem; 
+    }
+}

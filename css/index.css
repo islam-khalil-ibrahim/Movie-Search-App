@@ -56,7 +56,8 @@ body {
 
 }
 
-@media(max-width:430px) {
+
+@media(max-width: 430px) {
     .container {
         margin-block: 80px;
     }
@@ -72,5 +73,26 @@ body {
 
     .btn-box {
         flex-direction: column;
+    }
+}
+
+@media(max-width: 768px) {
+
+
+    
+    .container {
+        height: 400px;
+    }
+
+    .container span {
+        font-size: 4em; 
+    }
+
+    .btn-box {
+        gap: 10px; 
+    }
+
+    .btn-box .btn {
+        width: 80%; 
     }
 }
