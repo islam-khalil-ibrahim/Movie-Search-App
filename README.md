@@ -1,4 +1,6 @@
 # Movie Search App
+## How to Use
+You can visit the application directly at: [GitHub Pages Link Here](https://islam-khalil-ibrahim.github.io/Movie-Search-App/)
 
 ## Project Overview
 The **Movie Search App** is a dynamic and interactive web application built using **HTML**, **CSS**, and **JavaScript**. It allows users to search for movies and view essential details about them, providing a smooth and user-friendly interface. This project serves as the **final project** for the **Front-End Development Course** with **Gaza Sky Geeks (GSG)**.
