@@ -1,145 +1,145 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 .navbar {
-    background-color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    position: relative;
-    width: 100%;
-    z-index: 9999;
-    top: 0;
-
-
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  z-index: 9999;
+  top: 0;
 }
 
-.playwrite-gb-s{
-    font-family: "Playwrite GB S", cursive;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
+.playwrite-gb-s {
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
-  
-
 
 .navbar-link {
-    color: #e50914;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
+  color: #e50914;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
 }
 
 .navbar-logo {
-    color: #e50914;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 24px;
-    padding: 10px 20px;
-    text-shadow: 0 4px 15px rgba(241, 235, 235, 0.6);
-
+  color: #e50914;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 10px 20px;
+  text-shadow: 0 4px 15px rgba(241, 235, 235, 0.6);
 }
 
 .navbar-toggler {
-    display: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .navbar-menu {
-    position: relative;
+  position: relative;
 }
 
 .navbar-menu ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-    align-items: center;
-
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-menu ul li {
-    position: relative;
+  position: relative;
 }
 
 .navbar-menu ul li a {
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    padding: 15px 20px;
-    display: block;
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    position: relative;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
 }
 
 .navbar-menu ul li.active a {
-    color: #e50914;
-    background-color: #fff;
+  color: #e50914;
+  background-color: #fff;
 }
-
 
 /* /////////////// */
 
 .nav-item {
-    position: relative;
-        margin: 10px;
-
+  position: relative;
+  margin: 10px;
 }
 
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    padding: 10px 0;
-    border-radius: 5px;
-    z-index: 1000;
-    min-width: 150px;
-    flex-direction: column;
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 5px;
+  z-index: 1000;
+  min-width: 150px;
+  flex-direction: column;
 }
 
 .dropdown-item {
-    padding: 10px 20px;
-    color: #333;
-    text-decoration: none;
-    display: none;
-    transition: background-color 0.2s ease-in-out;
-}
-
-@media(max-width: 768px) {
-.navbar{
-    flex-direction: column;
-}
-.hsection {
-    margin-top: 110px;
-}
-.nav-item .fas {
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
   display: none;
+  transition: background-color 0.2s ease-in-out;
 }
 
-}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .hsection {
+    margin-top: 110px;
+  }
+  .nav-item .fas {
+    display: none;
+  }
+  .nav-link {
+    padding: 3px 5px;
+  }
 
+  .nav-item {
+    margin: 5px;
+  }
+
+  .navbar-menu ul li a {
+    padding: 5px 7px;
+  }
+}
 
 .nav-item {
-    margin: 10px;
+  margin: 10px;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
-    &:hover {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+  &:hover {
     background-color: rgba(255, 71, 87, 0.7);
     border-radius: 5px;
   }
